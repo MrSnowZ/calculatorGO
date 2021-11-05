@@ -9,7 +9,7 @@ func main() {
 	fmt.Println("Welcome to GO Calculator!")
 	cmd := readLine("Enter command: [a]dd, [s]ubtract, [m]ultiply, [d]ivide:")
 	fmt.Println(cmd)
-	if cmd == "a" {
+	/*if cmd == "a" {
 		num1, num2 := getUserNumbers()
 		result := num1 + num2 //cannot just print an int so you need to convert it back to a string!
 		sResult := fmt.Sprintf("%d", result)
@@ -35,7 +35,35 @@ func main() {
 
 	} else {
 		fmt.Println("Invalid Input!")
-	}
+	} */
+
+	switch(cmd){
+	case "a":
+		num1, num2 := getUserNumbers()
+		result := num1 + num2 //cannot just print an int so you need to convert it back to a string!
+		sResult := fmt.Sprintf("%d", result)
+		fmt.Println(sResult)
+		
+	case "b":
+		num1, num2 := getUserNumbers()
+		result := num1 - num2 //cannot just print an int so you need to convert it back to a string!
+		sResult := fmt.Sprintf("%d", result)
+		fmt.Println(sResult)
+		
+	case "c":
+		num1, num2 := getUserNumbers()
+		result := num1 * num2 //cannot just print an int so you need to convert it back to a string!
+		sResult := fmt.Sprintf("%d", result)
+		fmt.Println(sResult)
+		
+	case "d":
+		num1, num2 := getUserNumbers()
+		result := float32(num1) / float32(num2)
+		sResult := fmt.Sprintf("%f", result)
+		fmt.Println(sResult)
+		
+	 default:
+		fmt.Println("Invalid input!")
 
 }
 
@@ -61,3 +89,4 @@ func getUserNumbers() (int, int) {
 
 	return num1, num2
 }
+
